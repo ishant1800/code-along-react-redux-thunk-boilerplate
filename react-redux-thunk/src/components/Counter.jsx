@@ -1,13 +1,22 @@
 import React, { useReducer } from "react";
-import reducer from './Reducers';
+import { initialState, reducer } from './Reducers';
 
 const LikeCounter = () => {
-  const [state, dispatch] = useReducer(reducer, { count: 0 });
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  const incrementCounter = () => {
+    dispatch({ type: "INCREMENT" });
+  };
+
+  const decrementCounter = () => {
+    dispatch({ type: "DECREMENT" });
+  };
+
   return (
     <div>
-      <h1>Count: {state.count}</h1>
-      <button onClick={() => dispatch({ type: "INCREMENT" })}>+</button>
-      <button onClick={() => dispatch({ type: "DECREMENT" })}>-</button>
+      <h1>{state.count}</h1>
+      <button onClick={incrementCount}>Increment</button>
+      <button onClick={decrementCount}>Decrement</button>
     </div>
   );
 };
