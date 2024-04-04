@@ -1,15 +1,14 @@
+import { useState } from 'react'
 import './App.css'
-import Actions from './components/Actions'
-import LikeCounter from './components/Counter';
+import FetchData from './FetchData'
 
 function App() {
+
   return (
     <>
-      <div>
-        <Actions />
-        <LikeCounter/>
-      </div>
+    <FetchData/>
     </>
-  );
+  )
 }
+
 export default App
